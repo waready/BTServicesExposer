@@ -10,7 +10,7 @@ module.exports = {
    */
   description: description,
 
-  //theme: 'yuu',
+  theme: 'yuu',
   title: 'BTServicesExposer',
 
   dest: 'docs',
