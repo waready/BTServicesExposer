@@ -1,7 +1,7 @@
 <template>
-  <p class="demo">
-    {{ msg }}
-  </p>
+
+  <img :src="$withBase('/img/16.png')" class="center">
+
 </template>
 
 <script>
@@ -13,3 +13,11 @@
     }
   }
 </script>
+<style scoped>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>

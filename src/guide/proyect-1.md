@@ -10,16 +10,19 @@ En el mismo hay una sección btservices donde se podrá configura los
 servicios a ser utilizados. 
 
 Los datos para ingresar son:
+
+::: tip Nota
 Los siguientes 5 parámetros se completan si se usa autenticación oauth2, de lo contario se pueden 
 dejan como string vacío
+:::
 
 * **Canal**:  Nombre del canal. Identifica el canal o aplicación que utiliza el servicio
 * **Requerimiento**: Requerimiento de los servicios
 * **Usuario**: Nombre de usuario. Identifica el usuario de ejecución del requerimiento. Este  usuario debe ser válido para el canal que se está ejecutando en BTS
-*  **Userid**: Nombre de usuario de los servicios Bantotal
-*  **Userpassword**: Contraseña encritada para la authentication de los servicios (AES Encryptor)
-*  **Protocol**: Las opciones de protocolos son http y https
-*  **HostName**: IP o DNS del servidor
+* **Userid**: Nombre de usuario de los servicios Bantotal
+* **Userpassword**: Contraseña encritada para la authentication de los servicios (AES Encryptor)
+* **Protocol**: Las opciones de protocolos son http y https
+* **HostName**: IP o DNS del servidor
 * **Port**: Puerto donde están publicados los servicios 
 * **BaseUrl**: Base de la url de los servicios publicados
 * **SSLPublicCert**: Ubicación certificado público para cifrado de datos
@@ -29,8 +32,7 @@ dejan como string vacío
 * **headers**: User-Agent
 * **authenticate**: ejemplo ‘odwsbt_Authenticate_v1?Execute’ (no poner package ni aspx)
 * **plataform**: Las opciones de plataforma son JAVA o .NET 
-* **prefijo**: En caso de estar trabajando con servicios de V3R1, hay que agregarle en el 
-parámetro prefijo la opción de `“ardwsbt_” en vez de “odwsbt_”`. 
+* **prefijo**: En caso de estar trabajando con servicios de V3R1, hay que agregarle en el parámetro prefijo la opción de `“ardwsbt_” en vez de “odwsbt_”`. 
 
 ``` json
 btservices:{
@@ -79,22 +81,6 @@ en segundos, 3600 equivale a una hora). Lugo cargar el parámetro database_auth 
 relativos a la base de datos PostgreSQL (más adelante en el documento se hace referencia a esto
 nuevamente)
 
-``` json
-storeResponses:{
-    enable:true,
-    storeFile:"C://User//Administra//Documents//BTExposer//swagger//responseData.json"
-}
-
-```
-
-En esta versión se podrá usar BTServicesExposer con configuración de oauth2, o prescindir de ella y 
-solamente utilizar la autenticación de Bantotal Services con el servicio de Authenticate. 
-Entonces, para utilizar oauth2 hay que tener el parámetro auth en true (de lo contrario se deja en 
-false), auth_version en “oauth2” (de lo contrario se deja vacío), y agregar el tiempo que indica 
-cuanto tarda el token de autenticación en expirar con el parámetro accessTokenLifetime (expresada 
-en segundos, 3600 equivale a una hora). Lugo cargar el parámetro database_auth con los datos 
-relativos a la base de datos PostgreSQL (más adelante en el documento se hace referencia a esto
-nuevamente)
 
 ``` json
     auth:true, //opciones true or false

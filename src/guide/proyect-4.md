@@ -75,7 +75,7 @@ WITH (
 
 Como se mencionó anteriormente, para que los endpoint se generen con la autenticación 
 habilitada, hay que setera el parámetro auth en true y auth_version con “oauth2” en el archivo 
-config.js que se encuentra en la ruta \BTExposer\config\config.js. Regenerar los endpoints y
+config.js que se encuentra en la ruta `\BTExposer\config\config.js`. Regenerar los endpoints y
 asegurarse de tener generados los endpoint (json que se encuentran en la carpeta swagger_routes)
 con el parámetro auth en true. 
 
@@ -132,10 +132,12 @@ Para probar los endpoints, se podrá usar la herramienta Postman o Swagger
 ## Postman
 
 Primero, necesitamos crear un nuevo usuario. Para esto, realice una solicitud POST
-a http://servidor:xxx/auth/register con los siguientes parámetros de cuerpo (codificados como x-www-form-urlencoded)
+a `http://servidor:xxx/auth/register` con los siguientes parámetros de cuerpo (codificados como x-www-form-urlencoded)
 
 Esto se podrá realizar también opcionalmente a través de una página web que al final del 
 documento se explica (Registro por página web)
+
+
 Parámetros en el body: 
 
 * **username**: Nombre de usuario del api
@@ -143,8 +145,8 @@ Parámetros en el body:
 
 <img :src="$withBase('/img/03.png')" class="center">
 
-Con un usuario válido, ahora se puede iniciar sesión. Para esto, envíe otra solicitud POST a http: 
-//servidor:xxx/auth/login/ con los siguientes parámetros de cuerpo:
+Con un usuario válido, ahora se puede iniciar sesión. Para esto, envíe otra solicitud POST a `http://servidor:xxx/auth/login/` con los siguientes parámetros de cuerpo:
+
 * **username**: Nombre de usuario del api
 * **password**: Contraseña de la api
 * **grant_type**: password (modo de funcionamiento para la autenticación)
@@ -154,14 +156,12 @@ Con un usuario válido, ahora se puede iniciar sesión. Para esto, envíe otra s
 <img :src="$withBase('/img/04.png')" class="center">
 
 Como los tokens tienen un tiempo de vida, cuando este tiempo expire se podrá hacer otra 
-solicitud POST a http: //servidor:xxx/auth/login pero con los siguientes parámetros de cuerpo:
+solicitud POST a `http://servidor:xxx/auth/login` pero con los siguientes parámetros de cuerpo:
+
 * **grant_type**: refresh_token
 * **client_id**: test
 * **client_secret**: test
 * **refresh_token**: “refresh_token”(token correspondiente)
-
-Esta solicitud genera un nuevo token a partir del refresh token que se obtuvo en la solicitud 
-anterior sin tener que pasar los datos de autenticación de usuario y password nuevamente.
 
 Esta solicitud genera un nuevo token a partir del refresh token que se obtuvo en la solicitud anterior sin tener que pasar los datos de autenticación de usuario y password nuevamente.
 
@@ -179,7 +179,7 @@ Presionar el botón de Authorize y ya se podrán ejecutar los servicios correspo
 <img :src="$withBase('/img/07.png')" class="center">
 
 Los tokens tienen un tiempo de vida del valor seteado en la variable accessTokenLifetime del 
-archivo config que se encuentra en la siguiente ruta \BTExposer\config\config.js. Luego de
+archivo config que se encuentra en la siguiente ruta `\BTExposer\config\config.js`. Luego de
 trascurrido este tiempo, saldrá un mensaje de tiempo expirado como el siguiente.
 
 <img :src="$withBase('/img/08.png')" class="center">
