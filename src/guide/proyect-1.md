@@ -137,6 +137,29 @@ Y por último control de hash a nivel del mensaje para asegurar la integridad de
     KeyHash:"!_CLAVEXXX_!"
 ```
 
+
+* **withoutBtoutreq**: Si se encuentra en true, se elimina el tag Btoutreq en el texto del response.
+* **withoutBtinreq**: Si se encuentra en true, se elimina el tag Btinreq en el texto del response.
+* **withoutErroresnegoci**: Si se encuentra en true, se elimina el tag Erroresnegocio en el texto del response cuando no hay error.
+* **removeSdtFromResponse**: Elimina tag sdt* (sin colección) en el texto del response, solo en el caso de que es un único sdt (para sdt anidados no lo elimina)
+* **BTS_JSON_USE_OBJECT_FOR_COL_ITEM**: Este parámetro SOLO se podrá usar en caso de tener habilitado esta opción en la versión del BTServices (de lo contario se deja en true)
+
+``` json
+    withoutBtoutreq:false,
+    withoutBtinreq:false,
+    withoutErroresnegoci: false,
+    removeSdtFromResponse:false,
+    BTS_JSON_USE_OBJECT_FOR_COL_ITEM:true,
+```
+
+::: warning OBS
+Configuración Especial (en los sdt únicos, no aparece el texto `sdt*`)
+Esta configuración surgió de la posibilidad de eliminar el texto `“sdt*”` en el request. 
+Se incorporo la posibilidad de agregar un parámetro `"idSDT"`(con el nombre del `sdt`) en el `JSON` de los servicios, de modo de poder agregar el tag `sdt*` que fue eliminado, de modo que siga funcionado con `BTServices` (que reconozca el servicio que se está invocando)
+:::
+
+<img :src="$withBase('/img/00.png')" class="center">
+
 ## Paso 2 – Configurar aplicación Swagger
 
 Luego hay que configurar otro archivo config para levantar el Swagger. Ese archivo config.js se 

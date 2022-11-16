@@ -71,6 +71,7 @@ module.exports = {
             'proyect-4',
             'proyect-5',
             'proyect-6',
+            'proyect-7.1',
             'proyect-7',
             'proyect-8',
           ]
